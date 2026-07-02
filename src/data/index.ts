@@ -161,7 +161,7 @@ export const experiences: Experience[] = [
 
 export const certifications: Certification[] = [
   {
-    icon: "/comptia-logo.png",
+    icon: "/public/comptia-logo.png",
     name: "CompTIA Security+",
     issuer: "CompTIA",
     year: "Issued 2026",
