@@ -161,7 +161,7 @@ export const experiences: Experience[] = [
 
 export const certifications: Certification[] = [
   {
-    icon: "/Emily-Portfolio/comptia-logo.png",
+    icon: "/comptia-logo.png",
     name: "CompTIA Security+",
     issuer: "CompTIA",
     year: "Issued 2026",
@@ -169,7 +169,7 @@ export const certifications: Certification[] = [
     url: "https://www.credly.com/earner/earned/badge/d59648ed-d1e4-4494-85b9-6add9b85d415",
   },
   {
-    icon: "/Emily-Portfolio/comptia-logo.png",
+    icon: "/comptia-logo.png",
     name: "CompTIA CySA+",
     issuer: "CompTIA",
     year: "Issued 2026",
