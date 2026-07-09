@@ -1,11 +1,9 @@
 import type { NextConfig } from "next";
 
-const repo = "Emily-Portfolio";
-
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: `/${repo}`,
-  assetPrefix: `/${repo}/`,
+  basePath: "/Emily-Portfolio",
+  assetPrefix: "/Emily-Portfolio/",
   images: {
     unoptimized: true,
   },
