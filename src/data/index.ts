@@ -112,7 +112,7 @@ export const projects: Project[] = [
   },
   {
     icon: "🍯",
-    title: "TBD:SSH Honeypot (Cowrie) Deployment",
+    title: "TBD: SSH Honeypot (Cowrie) Deployment",
     description:
       "Deployed a Cowrie SSH honeypot in a virtualized lab using Docker to observe attacker behavior. Simulated brute-force attacks, captured SSH sessions and command execution, and analyzed logs to understand real-world attack techniques.",
     stack: [
@@ -135,7 +135,7 @@ export const experiences: Experience[] = [
     period: "May 2026 — Present",
     current: true,
     bullets: [
-      "Conducted vendor cybersecurity risk assessments by reviewing third-party audit reports, security questionnaires, and exception documentation",
+      "Conducted vendor cybersecurity risk assessments by reviewing third-party audit reports, security questionnaires, and exception documentation",https://github.com/Aka005/Emily-Portfolio/blob/main/src/data/index.ts
       "Evaluated security controls and maintained risk documentation to support vendor risk management decisions",
     ],
   },
@@ -161,7 +161,7 @@ export const experiences: Experience[] = [
 
 export const certifications: Certification[] = [
   {
-    icon: "/public/comptia-logo.png",
+    icon: "/Emily-Portfolio/comptia-logo.png",
     name: "CompTIA Security+",
     issuer: "CompTIA",
     year: "Issued 2026",
@@ -169,7 +169,7 @@ export const certifications: Certification[] = [
     url: "https://www.credly.com/earner/earned/badge/d59648ed-d1e4-4494-85b9-6add9b85d415",
   },
   {
-    icon: "/comptia-logo.png",
+    icon: "/Emily-Portfolio/comptia-logo.png",
     name: "CompTIA CySA+",
     issuer: "CompTIA",
     year: "Issued 2026",
