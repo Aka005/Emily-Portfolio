@@ -6,6 +6,8 @@ import SectionHeader from "./SectionHeader";
 import { useState } from "react";
 import Image from "next/image";
 
+const basePath = "/Emily-Portfolio";
+
 function pillClass(s: Certification["status"]) {
   if (s === "active") return "pill-silver";
   if (s === "pending") return "pill-purple";
@@ -43,6 +45,10 @@ export default function Certifications() {
         >
           {certifications.map((cert) => {
             const clickable = !!cert.url;
+            const iconSrc =
+              typeof cert.icon === "string" && cert.icon.startsWith("/")
+                ? `${basePath}${cert.icon}`
+                : cert.icon;
 
             const Card = (
               <div
@@ -78,16 +84,17 @@ export default function Certifications() {
                     flexShrink: 0,
                   }}
                 >
-                  {typeof cert.icon === "string" && cert.icon.startsWith("/") ? (
+                  {typeof iconSrc === "string" ? (
                     <Image
-                      src={cert.icon}
+                      src={iconSrc}
                       alt={cert.name}
                       width={34}
                       height={34}
                       style={{ objectFit: "contain" }}
+                      unoptimized
                     />
                   ) : (
-                    <span style={{ fontSize: "24px" }}>{cert.icon}</span>
+                    <span style={{ fontSize: "24px" }}>{iconSrc}</span>
                   )}
                 </div>
 
