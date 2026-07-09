@@ -46,8 +46,8 @@ export default function Certifications() {
           {certifications.map((cert) => {
             const clickable = !!cert.url;
             const iconSrc =
-              typeof cert.icon === "string" && cert.icon.startsWith("/")
-                ? `${basePath}${cert.icon}`
+              typeof cert.icon === "string"
+                ? `${basePath}${cert.icon.replace(/^\/public/, "")}`
                 : cert.icon;
 
             const Card = (
