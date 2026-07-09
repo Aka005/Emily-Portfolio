@@ -10,6 +10,8 @@ const quickItems = [
   { label: "Languages", value: "English, Japanese, Mandarin, Korean" },
 ];
 
+const basePath = "/Emily-Portfolio";
+
 export default function About() {
   return (
     <section id="about" className="section" style={{ background: "var(--bg-section)" }}>
@@ -49,47 +51,22 @@ export default function About() {
               }}
             >
               <Image
-                src="/official_headshot.jpg"
+                src={`${basePath}/official_headshot.jpg`}
                 alt="Emily Jao"
                 fill
                 style={{ objectFit: "cover" }}
                 priority
+                unoptimized
               />
             </div>
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "22px", maxWidth: "760px" }}>
-             {[
-                <>
-                  Hi there! Thanks for stopping by.
-                </>,
-                <>
-                  I&apos;m a{" "}
-                  <strong style={{ color: "#f3a38b", fontWeight: 700 }}>
-                    fourth-year Cybersecurity student
-                  </strong>{" "}
-                  at Penn State, currently interning in cybersecurity risk management. I focus on{" "}
-                  <strong style={{ color: "#f3a38b", fontWeight: 700 }}>
-                    vendor risk
-                  </strong>
-                  ,{" "}
-                  <strong style={{ color: "#f3a38b", fontWeight: 700 }}>
-                    security compliance
-                  </strong>
-                  , and reducing cyber risk.
-                </>,
-                <>
-                  I&apos;m passionate about{" "}
-                  <strong style={{ color: "#f3a38b", fontWeight: 700 }}>
-                    global cybersecurity
-                  </strong>{" "}
-                  — including international security standards and emerging threats. My goal is to build a career in the{" "}
-                  <strong style={{ color: "#f3a38b", fontWeight: 700 }}>
-                    APAC region
-                  </strong>{" "}
-                  by combining cybersecurity with international business and collaboration.
-                </>,
+              {[
+                "Hi there! Thanks for stopping by.",
+                "I’m a fourth-year Cybersecurity student at Penn State, currently interning in cybersecurity risk management. I focus on vendor risk, security compliance, and reducing cyber risk.",
+                "I’m passionate about global cybersecurity — including international security standards and emerging threats. My goal is to build a career in the APAC region by combining cybersecurity with international business and collaboration.",
               ].map((txt, i) => (
                 <p
                   key={i}
