@@ -45,10 +45,6 @@ export default function Certifications() {
         >
           {certifications.map((cert) => {
             const clickable = !!cert.url;
-            const iconSrc =
-              typeof cert.icon === "string"
-                ? `${repoBasePath}${cert.icon}`
-                : cert.icon;
 
             const Card = (
               <div
@@ -84,17 +80,16 @@ export default function Certifications() {
                     flexShrink: 0,
                   }}
                 >
-                  {typeof iconSrc === "string" ? (
+                  {typeof cert.icon === "string" && cert.icon.startsWith("/") ? (
                     <Image
-                      src={iconSrc}
+                      src={cert.icon}
                       alt={cert.name}
                       width={34}
                       height={34}
                       style={{ objectFit: "contain" }}
-                      unoptimized
                     />
                   ) : (
-                    <span style={{ fontSize: "24px" }}>{iconSrc}</span>
+                    <span style={{ fontSize: "24px" }}>{cert.icon}</span>
                   )}
                 </div>
 
