@@ -81,7 +81,7 @@ export default function Certifications() {
                 >
                   {typeof cert.icon === "string" && cert.icon.startsWith("/") ? (
                     <Image
-                      src={withBasePath(cert.icon)}
+                      src={`/Emily-Portfolio${cert.icon}`}
                       alt={cert.name}
                       width={34}
                       height={34}
