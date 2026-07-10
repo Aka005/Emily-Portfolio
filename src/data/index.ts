@@ -1,7 +1,5 @@
 import type { SkillCategory, Project, Experience, Certification } from "@/types";
 
-
-
 export const skillCategories: SkillCategory[] = [
   {
     title: "Security Operations",
@@ -36,15 +34,7 @@ export const projects: Project[] = [
     title: "MCP Vulnerability Research Lab",
     description:
       "Proof-of-concept lab built in Cursor IDE demonstrating tool poisoning and prompt injection attacks against MCP servers. Successfully exfiltrated a file via tool poisoning; prompt injection blocked by model safety and documented as a positive research finding.",
-    stack: [
-      "Python",
-      "FastMCP",
-      "MCP",
-      "Cursor IDE",
-      "Prompt Injection",
-      "Tool Poisoning",
-      "LLM Security",
-    ],
+    stack: ["Python", "FastMCP", "MCP", "Cursor IDE", "Prompt Injection", "Tool Poisoning", "LLM Security"],
     githubUrl: "https://github.com/Aka005/mcp-prompt-injection-lab",
   },
   {
@@ -52,14 +42,7 @@ export const projects: Project[] = [
     title: "Bank Web Application Security Lab",
     description:
       "Security lab demonstrating common web application vulnerabilities including IDOR, SQL injection, broken access control, and parameter tampering. Documented attack paths and recommended security mitigations.",
-    stack: [
-      "IDOR",
-      "SQL Injection",
-      "Broken Access Control",
-      "Burp Suite",
-      "OWASP Top 10",
-      "Web Security",
-    ],
+    stack: ["IDOR", "SQL Injection", "Broken Access Control", "Burp Suite", "OWASP Top 10", "Web Security"],
     githubUrl: "https://github.com/Aka005/SecureBank/tree/main",
   },
   {
@@ -67,15 +50,7 @@ export const projects: Project[] = [
     title: "FoodBridge",
     description:
       "AI-powered inventory management system developed for Penn State Dining to improve demand forecasting and reduce food waste. Built an XGBoost model using inventory data from 2,000+ products to generate data-driven purchasing recommendations.",
-    stack: [
-      "JavaScript",
-      "Python",
-      "XGBoost",
-      "Node.js",
-      "Machine Learning",
-      "Inventory Forecasting",
-      "Supply Chain",
-    ],
+    stack: ["JavaScript", "Python", "XGBoost", "Node.js", "Machine Learning", "Inventory Forecasting", "Supply Chain"],
     githubUrl: "https://github.com/FoodBridgeAI/Final-MVP-submission",
   },
   {
@@ -83,15 +58,7 @@ export const projects: Project[] = [
     title: "Supply Chain Security Research",
     description:
       "Research project analyzing cybersecurity risks across global supply chains, including third-party vendor risk, open-source software vulnerabilities, AI in defense, semiconductor supply chains, and cybersecurity governance.",
-    stack: [
-      "Supply Chain Security",
-      "Third-Party Risk",
-      "Open Source Security",
-      "AI Security",
-      "NIST",
-      "Cyber Risk",
-      "Governance",
-    ],
+    stack: ["Supply Chain Security", "Third-Party Risk", "Open Source Security", "AI Security", "NIST", "Cyber Risk", "Governance"],
     githubUrl:
       "https://www.linkedin.com/in/emily-jao-wb01/overlay/Project/1564824274/treasury/?profileId=ACoAAEKb0ZcBGOOkHaHDaz-s2M5S7fAQH3tbK7c&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BxaAtYMepSDeEz1eQPHWSnA%3D%3D",
   },
@@ -100,14 +67,7 @@ export const projects: Project[] = [
     title: "TBD: APAC Cybersecurity Market Research",
     description:
       "Independent research on cybersecurity trends across the APAC region, analyzing regional threats, security regulations, and employer landscapes to identify career pathways for international cybersecurity professionals.",
-    stack: [
-      "APAC",
-      "Threat Intelligence",
-      "Cybersecurity",
-      "Research",
-      "Governance",
-      "OSINT",
-    ],
+    stack: ["APAC", "Threat Intelligence", "Cybersecurity", "Research", "Governance", "OSINT"],
     githubUrl: "#",
   },
   {
@@ -115,15 +75,7 @@ export const projects: Project[] = [
     title: "TBD: SSH Honeypot (Cowrie) Deployment",
     description:
       "Deployed a Cowrie SSH honeypot in a virtualized lab using Docker to observe attacker behavior. Simulated brute-force attacks, captured SSH sessions and command execution, and analyzed logs to understand real-world attack techniques.",
-    stack: [
-      "Docker",
-      "Cowrie",
-      "Kali Linux",
-      "Parrot Linux",
-      "SSH",
-      "Nmap",
-      "Log Analysis",
-    ],
+    stack: ["Docker", "Cowrie", "Kali Linux", "Parrot Linux", "SSH", "Nmap", "Log Analysis"],
     githubUrl: "https://github.com/Aka005/Honeypot-Experiment",
   },
 ];
@@ -135,7 +87,7 @@ export const experiences: Experience[] = [
     period: "May 2026 — Present",
     current: true,
     bullets: [
-      "Conducted vendor cybersecurity risk assessments by reviewing third-party audit reports, security questionnaires, and exception documentation",https://github.com/Aka005/Emily-Portfolio/blob/main/src/data/index.ts
+      "Conducted vendor cybersecurity risk assessments by reviewing third-party audit reports, security questionnaires, and exception documentation",
       "Evaluated security controls and maintained risk documentation to support vendor risk management decisions",
     ],
   },
