@@ -45,7 +45,7 @@ export default function Certifications() {
             const clickable = !!cert.url;
             const iconSrc =
               typeof cert.icon === "string"
-                ? `/Emily-Portfolio${cert.icon.replace(/^\/public/, "")}`
+                ? `${basePath}${cert.icon}`
                 : cert.icon;
 
             const Card = (
