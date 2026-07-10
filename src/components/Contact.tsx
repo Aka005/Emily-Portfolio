@@ -32,11 +32,13 @@ export default function Contact() {
         >
           Open to cybersecurity roles!
         </p>
+
         <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "12px", marginBottom: "36px" }}>
           {contactLinks.map((link) => {
             const Icon = iconMap[link.icon as keyof typeof iconMap];
+
             return (
-              
+              <a
                 key={link.label}
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
@@ -65,6 +67,7 @@ export default function Contact() {
             );
           })}
         </div>
+
         <p
           style={{
             fontSize: "13px",
@@ -74,10 +77,7 @@ export default function Contact() {
           }}
         >
           Based in the US · Open to relocation ·{" "}
-          
-            href="mailto:epj5179@psu.edu"
-            style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 700 }}
-          >
+          <a href="mailto:epj5179@psu.edu" style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 700 }}>
             Say hello →
           </a>
         </p>
