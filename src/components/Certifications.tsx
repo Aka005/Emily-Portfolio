@@ -57,11 +57,11 @@ export default function Certifications() {
                   flexDirection: "column",
                   gap: "14px",
                   padding: "26px",
-                  background: cert.status === "planned" ? "rgba(255,255,255,0.03)" : "var(--surface)",
+                  background: cert.status === "planned" ? "rgba(255,255,255,0.03)" : "rgba(20,20,24,0.96)",
                   border: `1px ${cert.status === "planned" ? "dashed" : "solid"} ${
-                    hov === cert.name ? "rgba(255,255,255,0.28)" : "var(--border)"
+                    hov === cert.name ? "rgba(255,255,255,0.28)" : "rgba(255,255,255,0.10)"
                   }`,
-                  borderRadius: "var(--radius)",
+                  borderRadius: "16px",
                   opacity: cert.status === "planned" ? 0.65 : 1,
                   transform: hov === cert.name ? "translateY(-2px)" : "none",
                   transition: "all 0.2s",
