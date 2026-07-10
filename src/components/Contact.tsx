@@ -24,6 +24,7 @@ export default function Contact() {
         }}
       >
         <SectionHeader title="Let's Connect" center bottomSpace={44} />
+
         <p
           style={{
             fontSize: "15px",
