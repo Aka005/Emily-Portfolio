@@ -5,7 +5,6 @@ import type { Certification } from "@/types";
 import SectionHeader from "./SectionHeader";
 import { useState } from "react";
 import Image from "next/image";
-import { withBasePath } from "@/lib/paths";
 
 function pillClass(s: Certification["status"]) {
   if (s === "active") return "pill-silver";
