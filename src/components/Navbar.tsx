@@ -1,3 +1,9 @@
+
+
+
+
+
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -27,7 +33,10 @@ export default function Navbar() {
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActive((visible.target as HTMLElement).id);
+
+        if (visible) {
+          setActive((visible.target as HTMLElement).id);
+        }
       },
       {
         root: null,
@@ -101,6 +110,7 @@ export default function Navbar() {
           {links.map(({ href, label }) => {
             const isActive = active === href.slice(1);
             const isHovered = hovered === href;
+
             return (
               <li key={href}>
                 <a
