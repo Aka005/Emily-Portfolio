@@ -5,6 +5,7 @@ import type { Certification } from "@/types";
 import SectionHeader from "./SectionHeader";
 import { useState } from "react";
 import Image from "next/image";
+import { withBasePath } from "@/lib/paths";
 
 function pillClass(s: Certification["status"]) {
   if (s === "active") return "pill-silver";
@@ -80,7 +81,7 @@ export default function Certifications() {
                 >
                   {typeof cert.icon === "string" && cert.icon.startsWith("/") ? (
                     <Image
-                      src={cert.icon}
+                      src={withBasePath(cert.icon)}
                       alt={cert.name}
                       width={34}
                       height={34}
@@ -136,7 +137,7 @@ export default function Certifications() {
             );
 
             return clickable ? (
-              <a
+              
                 key={cert.name}
                 href={cert.url}
                 target="_blank"
