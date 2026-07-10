@@ -43,6 +43,10 @@ export default function Certifications() {
         >
           {certifications.map((cert) => {
             const clickable = !!cert.url;
+            const iconSrc =
+              typeof cert.icon === "string"
+                ? `/Emily-Portfolio${cert.icon.replace(/^\/public/, "")}`
+                : cert.icon;
 
             const Card = (
               <div
@@ -78,16 +82,17 @@ export default function Certifications() {
                     flexShrink: 0,
                   }}
                 >
-                  {typeof cert.icon === "string" && cert.icon.startsWith("/") ? (
+                  {typeof iconSrc === "string" ? (
                     <Image
-                      src={`/Emily-Portfolio${cert.icon}`}
+                      src={iconSrc}
                       alt={cert.name}
                       width={34}
                       height={34}
                       style={{ objectFit: "contain" }}
+                      unoptimized
                     />
                   ) : (
-                    <span style={{ fontSize: "24px" }}>{cert.icon}</span>
+                    <span style={{ fontSize: "24px" }}>{iconSrc}</span>
                   )}
                 </div>
 
@@ -136,7 +141,7 @@ export default function Certifications() {
             );
 
             return clickable ? (
-              
+              <a
                 key={cert.name}
                 href={cert.url}
                 target="_blank"
