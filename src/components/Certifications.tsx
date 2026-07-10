@@ -6,6 +6,8 @@ import SectionHeader from "./SectionHeader";
 import { useState } from "react";
 import Image from "next/image";
 
+const repoBasePath = "/Emily-Portfolio";
+
 function pillClass(s: Certification["status"]) {
   if (s === "active") return "pill-silver";
   if (s === "pending") return "pill-purple";
@@ -45,7 +47,7 @@ export default function Certifications() {
             const clickable = !!cert.url;
             const iconSrc =
               typeof cert.icon === "string"
-                ? `${basePath}${cert.icon}`
+                ? `${repoBasePath}${cert.icon}`
                 : cert.icon;
 
             const Card = (
