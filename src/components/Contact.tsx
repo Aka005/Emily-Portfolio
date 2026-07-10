@@ -33,33 +33,33 @@ export default function Contact() {
           Open to cybersecurity roles!
         </p>
         <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "12px", marginBottom: "36px" }}>
-          {contactLinks.map(({ icon, label, href }) => {
-            const Icon = iconMap[icon as keyof typeof iconMap];
+          {contactLinks.map((link) => {
+            const Icon = iconMap[link.icon as keyof typeof iconMap];
             return (
               
-                key={label}
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
-                onMouseEnter={() => setHov(label)}
+                onMouseEnter={() => setHov(link.label)}
                 onMouseLeave={() => setHov(null)}
                 style={{
                   display: "flex",
                   alignItems: "center",
                   gap: "10px",
-                  background: hov === label ? "rgba(243,163,139,0.10)" : "var(--surface)",
-                  border: `1px solid ${hov === label ? "rgba(243,163,139,0.45)" : "var(--border)"}`,
+                  background: hov === link.label ? "rgba(243,163,139,0.10)" : "var(--surface)",
+                  border: `1px solid ${hov === link.label ? "rgba(243,163,139,0.45)" : "var(--border)"}`,
                   borderRadius: "999px",
                   padding: "12px 18px",
                   minWidth: "180px",
                   textDecoration: "none",
-                  transform: hov === label ? "translateY(-2px)" : "none",
+                  transform: hov === link.label ? "translateY(-2px)" : "none",
                   transition: "all 0.2s",
                 }}
               >
                 {Icon && <Icon size={18} color="var(--text-primary)" />}
                 <span style={{ fontSize: "14px", color: "var(--text-primary)", fontWeight: 600 }}>
-                  {label}
+                  {link.label}
                 </span>
               </a>
             );
