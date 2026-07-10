@@ -69,18 +69,7 @@ export default function Navbar() {
           gap: "24px",
         }}
       >
-        <button
-          type="button"
-          onClick={() => scrollToSection("hero")}
-          style={{
-            background: "transparent",
-            border: "none",
-            padding: 0,
-            cursor: "pointer",
-            textDecoration: "none",
-            flexShrink: 0,
-          }}
-        >
+        <a href="#home" style={{ textDecoration: "none", flexShrink: 0 }}>
           <span
             className="mono"
             style={{
@@ -92,7 +81,8 @@ export default function Navbar() {
           >
             emily.jao
           </span>
-        </button>
+        </a>
+
 
         <ul
           style={{
