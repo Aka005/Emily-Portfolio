@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 
 const links = [
+  { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
@@ -12,43 +13,40 @@ const links = [
 ];
 
 export default function Navbar() {
-  const [active, setActive] = useState("about");
+  const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
+
+      const els = Array.from(document.querySelectorAll("section[id]")) as HTMLElement[];
+      for (const el of [...els].reverse()) {
+        if (window.scrollY >= el.offsetTop - 140) {
+          setActive(el.id);
+          break;
+        }
+      }
+
+      if (window.scrollY < 120) {
+        setActive("home");
+      }
     };
 
-    const sections = document.querySelectorAll("section[id]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visible) {
-          setActive((visible.target as HTMLElement).id);
-        }
-      },
-      {
-        root: null,
-        threshold: [0.15, 0.25, 0.5, 0.75],
-        rootMargin: "-20% 0px -55% 0px",
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-      observer.disconnect();
-      window.removeEventListener("scroll", onScroll);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const scrollToSection = (id: string) => {
+    setActive(id);
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <nav
@@ -76,7 +74,18 @@ export default function Navbar() {
           gap: "24px",
         }}
       >
-        <a href="#about" style={{ textDecoration: "none", flexShrink: 0 }}>
+        <button
+          type="button"
+          onClick={() => scrollToSection("home")}
+          style={{
+            background: "transparent",
+            border: "none",
+            padding: 0,
+            cursor: "pointer",
+            textDecoration: "none",
+            flexShrink: 0,
+          }}
+        >
           <span
             className="mono"
             style={{
@@ -88,7 +97,7 @@ export default function Navbar() {
           >
             emily.jao
           </span>
-        </a>
+        </button>
 
         <ul
           style={{
@@ -102,7 +111,8 @@ export default function Navbar() {
           }}
         >
           {links.map(({ href, label }) => {
-            const isActive = active === href.slice(1);
+            const id = href.slice(1);
+            const isActive = active === id;
             const isHovered = hovered === href;
 
             return (
@@ -110,6 +120,10 @@ export default function Navbar() {
                 <a
                   href={href}
                   className="mono"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(id);
+                  }}
                   onMouseEnter={() => setHovered(href)}
                   onMouseLeave={() => setHovered(null)}
                   style={{
