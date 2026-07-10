@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 
 const links = [
-  { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
@@ -13,7 +12,7 @@ const links = [
 ];
 
 export default function Navbar() {
-  const [active, setActive] = useState("home");
+  const [active, setActive] = useState("about");
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
 
@@ -27,10 +26,6 @@ export default function Navbar() {
           setActive(el.id);
           break;
         }
-      }
-
-      if (window.scrollY < 120) {
-        setActive("home");
       }
     };
 
@@ -76,7 +71,7 @@ export default function Navbar() {
       >
         <button
           type="button"
-          onClick={() => scrollToSection("home")}
+          onClick={() => scrollToSection("hero")}
           style={{
             background: "transparent",
             border: "none",
