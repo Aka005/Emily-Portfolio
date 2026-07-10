@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 
 const links = [
@@ -11,23 +12,39 @@ const links = [
 ];
 
 export default function Navbar() {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("about");
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
-      const els = Array.from(document.querySelectorAll("section[id]")) as HTMLElement[];
-      for (const el of [...els].reverse()) {
-        if (window.scrollY >= el.offsetTop - 130) {
-          setActive(el.id);
-          break;
-        }
-      }
     };
+
+    const sections = document.querySelectorAll("section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive((visible.target as HTMLElement).id);
+      },
+      {
+        root: null,
+        threshold: [0.15, 0.25, 0.5, 0.75],
+        rootMargin: "-20% 0px -55% 0px",
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    onScroll();
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (
@@ -56,7 +73,7 @@ export default function Navbar() {
           gap: "24px",
         }}
       >
-        <a href="#home" style={{ textDecoration: "none", flexShrink: 0 }}>
+        <a href="#about" style={{ textDecoration: "none", flexShrink: 0 }}>
           <span
             className="mono"
             style={{
