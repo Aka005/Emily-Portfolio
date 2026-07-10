@@ -7,7 +7,6 @@ export default function Footer() {
     }}>
       <p className="mono" style={{ fontSize:"11px", color:"#444" }}>
         <span style={{ color:"#888" }}>emilyj</span>
-        {" "}· Next.js 16 · TypeScript · Tailwind CSS ·{" "}
         <span style={{ color:"#888" }}>2025</span>
       </p>
     </footer>
