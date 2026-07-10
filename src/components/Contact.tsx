@@ -1,11 +1,14 @@
 "use client";
 
-import { Mail, Linkedin, Github } from "lucide-react";
 import { contactLinks } from "@/data";
 import SectionHeader from "./SectionHeader";
 import { useState } from "react";
 
-const iconMap = { mail: Mail, linkedin: Linkedin, github: Github };
+const iconMap: Record<string, string> = {
+  mail: "✉",
+  linkedin: "in",
+  github: "⌘",
+};
 
 export default function Contact() {
   const [hov, setHov] = useState<string | null>(null);
@@ -35,7 +38,7 @@ export default function Contact() {
 
         <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "12px", marginBottom: "36px" }}>
           {contactLinks.map((link) => {
-            const Icon = iconMap[link.icon as keyof typeof iconMap];
+            const icon = iconMap[link.icon] ?? "";
 
             return (
               <a
@@ -59,7 +62,7 @@ export default function Contact() {
                   transition: "all 0.2s",
                 }}
               >
-                {Icon && <Icon size={18} color="var(--text-primary)" />}
+                <span style={{ fontSize: "18px", color: "var(--text-primary)", fontWeight: 700 }}>{icon}</span>
                 <span style={{ fontSize: "14px", color: "var(--text-primary)", fontWeight: 600 }}>
                   {link.label}
                 </span>
