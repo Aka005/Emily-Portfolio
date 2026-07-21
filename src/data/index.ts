@@ -132,6 +132,6 @@ export const certifications: Certification[] = [
 
 export const contactLinks = [
   { icon: "mail", label: "Email", href: "mailto:epj5179@psu.edu" },
-  { icon: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/emily-jao-wb01" },
+  { icon: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/emily-jao" },
   { icon: "github", label: "GitHub", href: "https://github.com/Aka005" },
 ];
