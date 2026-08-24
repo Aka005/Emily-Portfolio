@@ -72,14 +72,6 @@ export const projects: Project[] = [
       "https://www.linkedin.com/in/emily-jao-wb01/overlay/Project/1564824274/treasury/?profileId=ACoAAEKb0ZcBGOOkHaHDaz-s2M5S7fAQH3tbK7c&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BxaAtYMepSDeEz1eQPHWSnA%3D%3D",
   },
   {
-    icon: "🌎",
-    title: "TBD: APAC Cybersecurity Market Research",
-    description:
-      "Independent research on cybersecurity trends across the APAC region, analyzing regional threats, security regulations, and employer landscapes to identify career pathways for international cybersecurity professionals.",
-    stack: ["APAC", "Threat Intelligence", "Cybersecurity", "Research", "Governance", "OSINT"],
-    githubUrl: "#",
-  },
-  {
     icon: "🍯",
     title: "TBD: SSH Honeypot (Cowrie) Deployment",
     description:
