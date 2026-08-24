@@ -30,6 +30,15 @@ export const skillCategories: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
+    icon: "🤖", 
+    title: "Arduino EVA-01 Mini Robot", 
+    description: 
+      "Built a miniature EVA-01 inspired interactive robot using Arduino, LEDs, sensors, and a breadboard circuit. Programmed sensor-based LED responses and tested hardware interactions while learning embedded systems and electronics prototyping.", 
+    stack: ["Arduino", "C/C++", "Breadboard", "LEDs", "Tilt Switch", "Sensors", "Embedded Systems"], 
+    githubUrl: "TBD", 
+  },
+  
+  {
     icon: "🔬",
     title: "MCP Vulnerability Research Lab",
     description:
