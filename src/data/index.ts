@@ -78,9 +78,6 @@ export const skillCategories: SkillCategory[] = [
   },
 ];
 
-
-
-
 export const projects: Project[] = [
    {
     icon: "🖥️",
