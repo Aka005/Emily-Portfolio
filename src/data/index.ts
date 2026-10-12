@@ -4,31 +4,93 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Security Operations",
     icon: "shield",
-    skills: ["Wireshark", "CVSS Scoring", "MITRE ATT&CK", "Diamond Model", "Cyber Kill Chain", "SIEM"],
+    skills: [
+      "Wireshark",
+      "CVSS Scoring",
+      "MITRE ATT&CK",
+      "Diamond Model",
+      "Cyber Kill Chain",
+      "SIEM",
+      "Nmap",
+      "Log Analysis",
+    ],
   },
   {
     title: "Compliance & Governance",
     icon: "search",
-    skills: ["SOC 2", "IEC 62443", "ISO 27001", "NIST CSF", "HIPAA", "NIST 800-53"],
+    skills: [
+      "SOC 2",
+      "IEC 62443",
+      "ISO 27001",
+      "NIST CSF",
+      "HIPAA",
+      "NIST 800-53",
+      "Third-Party Risk",
+      "Supply Chain Security",
+      "OneTrust",
+      "ServiceNow",
+    ],
   },
   {
     title: "Web Security",
     icon: "settings",
-    skills: ["SQLi", "XSS", "IDOR", "Broken Access Control", "Burp Suite", "Dev Tools"],
+    skills: [
+      "SQLi",
+      "XSS",
+      "IDOR",
+      "Broken Access Control",
+      "Burp Suite",
+      "Dev Tools",
+      "OWASP Top 10",
+      "Parameter Tampering",
+      "MCP Security",
+      "Prompt Injection",
+      "Tool Poisoning",
+      "LLM Security",
+    ],
   },
   {
     title: "Programming",
     icon: "code",
-    skills: ["Java", "SQL", "Python", "TypeScript"],
+    skills: [
+      "Java",
+      "SQL",
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "Node.js",
+      "C/C++",
+      "FastMCP",
+      "FastAPI",
+    ],
   },
   {
     title: "Digital Forensics",
     icon: "scan-search",
-    skills: ["Autopsy", "Ghidra", "FTK"],
+    skills: [
+      "Autopsy",
+      "Ghidra",
+      "FTK",
+      "Docker",
+      "Linux",
+      "Cowrie",
+    ],
   },
 ];
 
+
+
+
 export const projects: Project[] = [
+   {
+    icon: "🖥️",
+    title: "Backend Security Monitoring Lab",
+    description:
+      "Designing a Node.js/Express lab to simulate API attacks and analyze security logs for suspicious activity.",
+    stack: ["Node.js", "Express.js", "API Security"],
+    githubUrl: "TBD",
+  },
+  
   {
     icon: "🤖", 
     title: "Arduino EVA-01 Mini Robot", 
@@ -81,7 +143,16 @@ export const projects: Project[] = [
   },
 ];
 
-export const experiences: Experience[] = [
+export const experiences: Experience[] = [  
+  {
+    title: "MAC Academic Coach",
+    company: "Penn State University — Morgan Academic Center",
+    period: "Sep 2026 — Present",
+    current: true,
+    bullets: [
+      "Provide individualized academic support to student-athletes, strengthening their study habits, organization, and time management skills",
+    ],
+  },
   {
     title: "Cyber Risk Intern",
     company: "Leidos",
